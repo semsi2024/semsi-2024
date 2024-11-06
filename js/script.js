@@ -9,7 +9,6 @@ const statsSection = document.querySelector('.stats-container');
 // Mobile menu toggle
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 }
@@ -62,6 +61,7 @@ function animateStats() {
         const duration = 2000; // Animation duration in milliseconds
         const increment = target / (duration / 16); // 60fps
         let current = 0;
+
         const updateCount = () => {
             if (current < target) {
                 current += increment;
@@ -71,6 +71,7 @@ function animateStats() {
                 stat.textContent = target;
             }
         };
+
         updateCount();
     });
 }
@@ -82,6 +83,7 @@ if (statsSection) {
         rootMargin: '0px',
         threshold: 0.5
     };
+
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -90,5 +92,6 @@ if (statsSection) {
             }
         });
     }, observerOptions);
+
     statsObserver.observe(statsSection);
 }
