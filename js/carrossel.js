@@ -1,4 +1,4 @@
-// carousel.js
+// Variáveis globais
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
@@ -6,33 +6,7 @@ const container = document.querySelector('.carousel-container');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
-function setupCarousel() {
-    positionItems();
-    setActiveItem(currentIndex);
-    
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prevSlide();
-        if (e.key === 'ArrowRight') nextSlide();
-    });
-
-    // Touch navigation
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    container.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    container.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-}
-
+// Função para posicionar os itens do carrossel
 function positionItems() {
     const radius = 500;
     items.forEach((item, index) => {
@@ -41,6 +15,7 @@ function positionItems() {
     });
 }
 
+// Função para definir o item ativo
 function setActiveItem(index) {
     items.forEach((item, i) => {
         item.classList.remove('active');
@@ -54,23 +29,19 @@ function setActiveItem(index) {
     items[index].classList.add('active');
 }
 
-function rotateCarousel(direction) {
-    if (direction === 'next') {
-        currentIndex = (currentIndex + 1) % totalItems;
-    } else {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    }
+// Função para mover para o slide anterior
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
     setActiveItem(currentIndex);
 }
 
+// Função para mover para o próximo slide
 function nextSlide() {
-    rotateCarousel('next');
+    currentIndex = (currentIndex + 1) % totalItems;
+    setActiveItem(currentIndex);
 }
 
-function prevSlide() {
-    rotateCarousel('prev');
-}
-
+// Função para lidar com o gesto de swipe
 function handleSwipe() {
     const swipeThreshold = 50;
     const swipeLength = touchEndX - touchStartX;
@@ -84,5 +55,33 @@ function handleSwipe() {
     }
 }
 
-// Initialize carousel
+// Função para configurar o carrossel
+function setupCarousel() {
+    positionItems();
+    setActiveItem(currentIndex);
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Navegação por teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Navegação por toque
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+}
+
+// Inicializar o carrossel quando o documento estiver carregado
 document.addEventListener('DOMContentLoaded', setupCarousel);
