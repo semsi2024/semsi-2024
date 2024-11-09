@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEMSI 2024 - Inovação e Tecnologia</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrossel.css">
 </head>
 <body>
     <!-- Header com Navigation -->
@@ -86,9 +87,71 @@
                         <span class="stat-label">Palestras</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-number" data-target="4">0</span>
                         <span class="stat-label">Minicursos</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel" class="section">
+        <h3>Conheça os palestrantes</h3>
+        <div class="spacer"></div> <!-- Espaçamento antes das imagens -->
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Fabrício.jpeg" alt="Fabricio Lamas Borges Silva">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Jakellyne.jpeg" alt="Jakellyne Araújo Silva">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Diego.jpeg" alt="Diego Gomes Castilho">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Roberto.jpeg" alt="Roberto Natanael de Almeida">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Terezinha.jpeg" alt="Terezinha Sousa de Medeiros">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Derci.jpeg" alt="Derci dos Santos Lima">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Edson.jpeg" alt="Edson Silva">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Gerson.jpeg" alt="Gerson Everton Borbas Lopes">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-box">
+                            <img src="img/Raquel.jpeg" alt="Raquel Cristina dos Santos">
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div> <!-- Espaçamento entre imagens e setas -->
+                <div class="navigation">
+                    <button class="prev" onclick="prevSlide()">←</button>
+                    <button class="next" onclick="nextSlide()">→</button>
                 </div>
             </div>
         </div>
@@ -180,21 +243,25 @@
                             <div class="minicursos-grid">
                                 <div class="minicurso-card">
                                     <span class="time">20:30</span>
+                                    <h5>Minicurso</h5>
                                     <h5>Arduino</h5>
                                     <p>Professor Edmar Yokome</p>
                                 </div>
                                 <div class="minicurso-card">
                                     <span class="time">20:30</span>
+                                    <h5>Minicurso</h5>
                                     <h5>Como estruturar um artigo</h5>
                                     <p>Prof.: Brenda Mendes Lopes e Leusimar Lourenço de Abreu</p>
                                 </div>
                                 <div class="minicurso-card">
                                     <span class="time">20:30</span>
+                                    <h5>Minicurso</h5>
                                     <h5>Testes de software</h5>
                                     <p>Alunos: Fábio Henrique e Tayssa Victória</p>
                                 </div>
                                 <div class="minicurso-card">
                                     <span class="time">20:30</span>
+                                    <h5>Minicurso</h5>
                                     <h5>Notion IA + ChatGPT - Formação de Wikis e Criação de Prompts</h5>
                                     <p>Prof.: Isaac da Silva Cardoso</p>
                                 </div>
@@ -229,54 +296,25 @@
                     </div>
                 </div>
             </div>
-            <button id="showSpeakers" class="cta-button">Conheça os Palestrantes</button>
         </div>
         <div class="local">
             <h4>Local: Universidade Estadual de Goiás - Unidade Santa Helena de Goiás</h4>
         </div>
     </section>
 
-<!-- Popup para Palestrantes -->
-<div id="speakersPopup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn" id="closePopup">&times;</span>
-        <div class="speaker-images">
-            <img src="img/Derci.jpeg" alt="Derci dos Santos Lima" class="popup-thumbnail">
-            <img src="img/Diego.jpeg" alt="Diego Gomes Castilho" class="popup-thumbnail">
-            <img src="img/Edson.jpeg" alt="Edson Silva" class="popup-thumbnail">
-            <img src="img/Fabrício.jpeg" alt="Fabrício Lamas Borges Silva" class="popup-thumbnail">
-            <img src="img/Gerson.jpeg" alt="Gerson Everton Borbas Lopes" class="popup-thumbnail">
-            <img src="img/Jakellyne.jpeg" alt="Jakellyne Araújo Silva" class="popup-thumbnail">
-            <img src="img/Maria.jpeg" alt="Maria da Saúde Berto" class="popup-thumbnail">
-            <img src="img/Raquel.jpeg" alt="Raquel Cristina dos Santos" class="popup-thumbnail">
-            <img src="img/Roberto.jpeg" alt="Roberto Natanael de Almeida" class="popup-thumbnail">
-            <img src="img/Terezinha.jpeg" alt="Terezinha Sousa de Medeiros" class="popup-thumbnail">
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&#169; SEMSI 2024 - Universidade Estadual de Goiás</p>
         </div>
-    </div>
-</div>
+    </footer>
 
-<!-- Tela Cheia para Imagens -->
-<div id="fullscreenPopup" class="fullscreen-popup">
-    <div class="fullscreen-content">
-        <img src="" alt="Full Image" class="fullscreen-image">
-        <span class="close-fullscreen">X</span>
-        <button class="prev-btn">&#10094;</button> <!-- Botão de voltar -->
-        <button class="next-btn">&#10095;</button> <!-- Botão de avançar -->
-    </div>
-</div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Voltar ao topo">
+        <span>Voltar ao topo</span>
+    </button>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-bottom">
-        <p>&#169; SEMSI 2024 - Universidade Estadual de Goiás</p>
-    </div>
-</footer>
-
-<!-- Back to Top Button -->
-<button id="backToTop" aria-label="Voltar ao topo">
-    <span>Voltar ao topo</span>
-</button>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/carrossel.js"></script>
 </body>
 </html>
