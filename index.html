@@ -6,6 +6,27 @@
     <title>SEMSI 2024 - Inovação e Tecnologia</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="js/carrossel.css">
+    <style>
+        /* Estilos para o vídeo */
+        .video-container {
+            position: relative;
+            width: 65%; /* Reduzido para 65% do tamanho original */
+            margin: 0 auto; /* Centraliza o vídeo */
+            padding-bottom: 36.5625%; /* Mantém a proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            background-color: #000; /* Fundo preto para contraste */
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.2) contrast(1.3) saturate(1.4) sharpen(1.5); /* Filtros para melhorar a qualidade visual */
+        }
+    </style>
 </head>
 <body>
     <!-- Header com Navigation -->
@@ -300,6 +321,14 @@
         <div class="local">
             <h4>Local: Universidade Estadual de Goiás - Unidade Santa Helena de Goiás</h4>
         </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="img/patrocinadores.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
     </section>
 
     <!-- Footer -->
